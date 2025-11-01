@@ -1,4 +1,4 @@
-CC = gcc
+CC ?= $(CROSS_COMPILE)gcc
 CFLAGS = -I../include -Wall
 OBJS = otp.o sha1.o user.o
 OUT = gentop
