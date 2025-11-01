@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -I../include -Wall
 OBJS = otp.o sha1.o user.o
-OUT = user
+OUT = gentop
 
 all: $(OBJS)
 	$(CC) $(OBJS) -o $(OUT)
