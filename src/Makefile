@@ -1,10 +1,14 @@
 CC ?= $(CROSS_COMPILE)gcc
-CFLAGS = -I../include -Wall
+CFLAGS ?= -I../include -Wall
+LDFLAGS ?=
+
 OBJS = otp.o sha1.o user.o
 OUT = genotp
 
-all: $(OBJS)
-	$(CC) $(OBJS) -o $(OUT)
+all: $(OUT)
+
+$(OUT): $(OBJS)
+	$(CC) $(OBJS) -o $@ $(LDFLAGS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
