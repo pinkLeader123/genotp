@@ -8,7 +8,7 @@ OUT = genotp
 all: $(OUT)
 
 $(OUT): $(OBJS)
-	$(CC) $(OBJS) -o $@ $(LDFLAGS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LDFLAGS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
